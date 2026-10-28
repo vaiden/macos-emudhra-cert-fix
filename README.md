@@ -7,13 +7,13 @@ This repo is an agent skill (it also works fine without an agent) that checks yo
 ## Install with skills.sh (recommended)
 
 ```bash
-npx skills add vaiden/macos-mudhara-cert-fix
+npx skills add vaiden/macos-emudhra-cert-fix
 ```
 
 The CLI asks which agents to install it for. Add `-g` to make it available in all your projects. To install it straight into Claude Code everywhere:
 
 ```bash
-npx skills add vaiden/macos-mudhara-cert-fix -g -a claude-code
+npx skills add vaiden/macos-emudhra-cert-fix -g -a claude-code
 ```
 
 ## Or link it into Claude Code by hand

@@ -4,15 +4,29 @@ In October 2026, the private keys of several eMudhra certificate authorities wer
 
 This repo is an agent skill (it also works fine without an agent) that checks your Mac and applies [Apple's recommended fix](https://support.apple.com/en-us/149555) safely. It works on both Intel and Apple silicon Macs.
 
-## Use it with Claude Code
+## Install with skills.sh (recommended)
 
-Link the skill into your skills folder:
+```bash
+npx skills add vaiden/macos-mudhara-cert-fix
+```
+
+The CLI asks which agents to install it for. Add `-g` to make it available in all your projects. To install it straight into Claude Code everywhere:
+
+```bash
+npx skills add vaiden/macos-mudhara-cert-fix -g -a claude-code
+```
+
+## Or link it into Claude Code by hand
+
+From a clone of this repo:
 
 ```bash
 ln -s "$PWD/macos-emudhra-cert-fix" ~/.claude/skills/macos-emudhra-cert-fix
 ```
 
-Then start a new session and type `/macos-emudhra-cert-fix`. It asks whether you want to **assess** or **fix**, and walks you through the rest. The agent never runs `sudo` itself. When something needs root, it gives you one command to run.
+## Use it with your agent
+
+Start a new session and type `/macos-emudhra-cert-fix`. It asks whether you want to **assess** or **fix**, and walks you through the rest. The agent never runs `sudo` itself. When something needs root, it gives you one command to run.
 
 ## Use it by hand
 

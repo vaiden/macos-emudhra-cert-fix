@@ -4,19 +4,6 @@ In October 2026, the private keys of several eMudhra certificate authorities wer
 
 This repo is an agent skill (it also works fine without an agent) that checks your Mac and applies [Apple's recommended fix](https://support.apple.com/en-us/149555) safely. It works on both Intel and Apple silicon Macs.
 
-## What's inside
-
-```
-macos-emudhra-cert-fix/
-├── SKILL.md                         instructions for the agent
-├── data/blocked-certificates.txt    the 12 blocked certificates (from Apple)
-└── scripts/
-    ├── assess.sh                    read-only check, no sudo needed
-    ├── fix-mode1-emsign.sh          removes emSign ECC Root CA - G3
-    ├── fix-mode2-emsign-aaa.sh      also removes AAA Certificate Services
-    └── restore.sh                   puts the original file back
-```
-
 ## Use it with Claude Code
 
 Link the skill into your skills folder:
@@ -53,3 +40,20 @@ Changed your mind? `sudo .../restore.sh` brings the original back.
 - Running a fix twice is harmless.
 - macOS updates can restore the original file. Run `assess.sh` again after updating until Apple ships its own fix.
 - Apps that bundle their own certificates (Python `certifi`, Node, Java, Firefox) aren't covered. Update those separately.
+
+## What's inside
+
+```
+macos-emudhra-cert-fix/
+├── SKILL.md                         instructions for the agent
+├── data/blocked-certificates.txt    the 12 blocked certificates (from Apple)
+└── scripts/
+    ├── assess.sh                    read-only check, no sudo needed
+    ├── fix-mode1-emsign.sh          removes emSign ECC Root CA - G3
+    ├── fix-mode2-emsign-aaa.sh      also removes AAA Certificate Services
+    └── restore.sh                   puts the original file back
+```
+
+## License
+
+[MIT](LICENSE)
